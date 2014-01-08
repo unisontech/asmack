@@ -68,8 +68,9 @@ fetchall() {
 	# always clean the local copy first
 	rm -rf ${SRC_DIR}/smack
 	mkdir ${SRC_DIR}/smack
-	cd $SMACK_REPO
-	git archive $SMACK_BRANCH | tar -x -C ${SRC_DIR}/smack
+        git clone $SMACK_REPO ${SRC_DIR}/smack
+	#cd $SMACK_REPO
+	#git archive $SMACK_BRANCH | tar -x -C ${SRC_DIR}/smack
 	if [ $? -ne 0 ]; then
 	    exit
 	fi
